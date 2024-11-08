@@ -33,12 +33,21 @@ DEFAULT_FONT_FP = os.path.join(
 )
 
 
+# Numpy sctypes (np.sctypes removed in Numpy 2.0).
+SCTYPES = {
+	'int'    : [np.int8, np.int16, np.int32, np.int64],
+	'uint'   : [np.uint8, np.uint16, np.uint32, np.uint64],
+	'float'  : [np.float16, np.float32, np.float64],
+	'complex': [np.complex64, np.complex128],
+	'others' : [bool, object, bytes, str, np.void],
+}
+
 # to check if a dtype instance is among these dtypes, use e.g.
 # `dtype.type in  NP_FLOAT_TYPES` do not just use `dtype in NP_FLOAT_TYPES` as
 # that would fail
-NP_FLOAT_TYPES = set(np.sctypes["float"])
-NP_INT_TYPES = set(np.sctypes["int"])
-NP_UINT_TYPES = set(np.sctypes["uint"])
+NP_FLOAT_TYPES = set(SCTYPES["float"])
+NP_INT_TYPES = set(SCTYPES["int"])
+NP_UINT_TYPES = set(SCTYPES["uint"])
 
 IMSHOW_BACKEND_DEFAULT = "matplotlib"
 
