@@ -181,6 +181,7 @@ repository [imgaug-doc](https://github.com/aleju/imgaug-doc).
 
 ## Recent Changes
 
+* **0.4.1**: Fixed numpy 2.0 support.
 * **0.4.0**: Added new augmenters, changed backend to batchwise augmentation,
   support for numpy 1.18 and python 3.8.
 * **0.3.0**: Reworked segmentation map augmentation, adapted to numpy 1.17+
